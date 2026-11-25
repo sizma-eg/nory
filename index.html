@@ -1,1 +1,236 @@
 
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff4f7">
+<title>عيد ميلاد سعيد يا نونة 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#f5a7c1;--rose:#d66b91;--dark:#87425f;--ink:#684454;--cream:#fff8f7;--gold:#d8b17e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Cairo,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 12% 15%,#ffe0eb 0,transparent 35%),radial-gradient(circle at 90% 75%,#f9dfeb 0,transparent 38%),#fff9f7}
+.grain{position:fixed;inset:0;z-index:20;pointer-events:none;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E")}
+#intro{position:fixed;inset:0;z-index:30;display:grid;place-items:center;text-align:center;padding:24px;background:linear-gradient(145deg,#fff2f6,#f9dce8,#fff8f2);transition:opacity .9s,visibility .9s}
+#intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.intro-box{max-width:420px}
+.kicker{font-size:11px;letter-spacing:3px;color:#b87991;font-weight:800}
+.gift{font-size:92px;display:block;margin:22px 0;filter:drop-shadow(0 12px 15px #d78cae66);animation:bob 2.3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-13px) rotate(4deg)}}
+.intro-box h1{font-size:clamp(27px,7vw,39px);color:#a84f75;font-weight:900}
+.intro-box p{font-size:14px;line-height:2;color:#987887;margin-top:9px}
+.primary{border:0;border-radius:40px;padding:14px 29px;color:white;font-weight:800;background:linear-gradient(135deg,#ed9db9,#c75d87);box-shadow:0 10px 25px #d8799b55;margin-top:25px;transition:.25s}
+.primary:hover{transform:translateY(-3px)}
+#main{opacity:0;visibility:hidden;transition:opacity 1s}
+#main.visible{opacity:1;visibility:visible}
+.wrap{width:min(100% - 34px,900px);margin:auto}
+.hero{min-height:95svh;display:grid;place-items:center;text-align:center;padding:80px 0 70px;position:relative}
+.hero-inner{max-width:680px}
+.eyebrow{font-size:11px;letter-spacing:3px;color:#bd8197;font-weight:800}
+.hero .cake{font-size:54px;margin:22px 0;display:block;animation:heartbeat 2s infinite}
+@keyframes heartbeat{50%{transform:scale(1.12)}}
+.hero h1{font-size:clamp(43px,10vw,78px);line-height:1.3;color:#ad5277;font-weight:900}
+.hero h1 span{background:linear-gradient(90deg,#d989a7,#a94470,#d4a477);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{max-width:520px;margin:18px auto;color:#987987;line-height:2.2;font-size:15px}
+.date-pill{display:inline-block;margin-top:17px;border:1px solid #ebc6d4;border-radius:30px;padding:8px 19px;background:#ffffffa8;color:#a85a7c;font-size:13px}
+.scroll-note{position:absolute;bottom:20px;color:#b78a9b;font-size:11px;animation:down 1.8s infinite}
+@keyframes down{50%{transform:translateY(7px)}}
+section{padding:76px 0}
+.section-head{text-align:center;margin-bottom:35px}
+.section-head small{letter-spacing:3px;color:#c1849b;font-size:10px;font-weight:800}
+.section-head h2{color:#a84f75;font-size:clamp(25px,6vw,35px);margin-top:8px}
+.section-head p{font-size:13px;color:#a18791;margin-top:6px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px;align-items:start}
+.polaroid{background:#fff;padding:10px 10px 16px;border-radius:4px;box-shadow:0 12px 32px #9b58731b;transform:rotate(var(--tilt));transition:transform .35s,box-shadow .35s}
+.polaroid:hover{transform:rotate(0) translateY(-8px);box-shadow:0 18px 35px #9b587333}
+.polaroid img{width:100%;height:260px;object-fit:cover;display:block;background:#f6e3eb}
+.polaroid:nth-child(1) img{object-position:center 30%}
+.polaroid:nth-child(2) img{object-position:center 30%}
+.polaroid:nth-child(3) img{object-position:center 35%}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:#ffffffb8;border:1px solid #f0d5df;border-radius:22px;padding:23px 15px;text-align:center;box-shadow:0 10px 30px #d28ba51a;transition:.3s}
+.card:hover{transform:translateY(-6px)}
+.card .emoji{font-size:32px}
+.card h3{color:#a65075;font-size:15px;margin:11px 0 6px}
+.card p{font-size:12px;color:#967986;line-height:2}
+.quote{padding:42px 24px;text-align:center;border-radius:28px;background:linear-gradient(135deg,#f9dce7,#fff0f4);border:1px solid #f0cbd9}
+.quote .mark{font:64px Georgia;color:#d38aa5;line-height:.8}
+.quote p{font-size:clamp(18px,4.8vw,25px);font-weight:800;color:#9e4b70;line-height:2}
+.quote small{display:block;margin-top:15px;color:#b17c91;font-size:10px;letter-spacing:2px}
+.note{max-width:650px;margin:auto;padding:29px 24px;text-align:center;background:#fffdfd;border:1px solid #efd4df;border-radius:25px;box-shadow:0 14px 40px #d18aa71b}
+.note .icon{font-size:39px}
+.note h3{color:#a94d73;margin:10px 0;font-size:21px}
+.note p{font-size:13px;color:#967986;line-height:2}
+.note-text{max-height:0;overflow:hidden;opacity:0;transition:max-height 1s,opacity .8s,margin .8s}
+.note-text.open{max-height:400px;opacity:1;margin-top:19px}
+.note-text .body{border-top:1px solid #f0d8e1;padding-top:18px;line-height:2.4;text-align:right}
+.note-text strong{display:block;text-align:center;color:#b85c81;font-size:17px;margin-top:15px}
+.secondary{border:0;border-radius:30px;padding:12px 23px;color:white;background:linear-gradient(135deg,#e99ab6,#c45b84);font-size:13px;font-weight:800;margin-top:20px}
+.final{padding:82px 20px;text-align:center;background:linear-gradient(145deg,#f9dce7,#fff4f5);border-top:1px solid #f0d0dd}
+.final .heart{font-size:57px}
+.final h2{font-size:clamp(26px,7vw,42px);color:#a84e74;margin:15px 0}
+.final p{font-size:13px;line-height:2;color:#987987}
+.final .sign{margin-top:19px;color:#b75a80;font-weight:900}
+footer{text-align:center;padding:20px;background:#fff9fa;color:#bd96a5;font-size:10px}
+.float{position:fixed;bottom:-30px;z-index:10;pointer-events:none;animation:rise linear forwards;opacity:.8}
+@keyframes rise{to{transform:translateY(-110vh) rotate(330deg);opacity:0}}
+@media(max-width:650px){.gallery{grid-template-columns:1fr;max-width:330px;margin:auto;gap:22px}.polaroid img{height:320px}.polaroid:nth-child(2){transform:rotate(2deg)}.polaroid:nth-child(3){transform:rotate(-2deg)}.cards{grid-template-columns:1fr}.card{padding:20px}.hero p{font-size:14px}section{padding:60px 0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="grain"></div>
+
+<audio id="birthdayMusic" src="birthday-music.mp3" loop preload="none"></audio>
+
+<div id="intro">
+ <div class="intro-box">
+  <div class="kicker">A TINY SURPRISE FOR NONA</div>
+  <span class="gift">🎁</span>
+  <h1>بت يا نوري</h1>
+  <p>حضّرتلك حاجة بسيطة،<br> 🩷</p>
+  <button class="primary" onclick="openGift()">افتحي هديتك 🩷</button>
+ </div>
+</div>
+
+<div id="main">
+ <header class="hero">
+  <div class="wrap hero-inner">
+   <div class="eyebrow">25 NOVEMBER · YOUR SPECIAL DAY</div>
+   <span class="cake">🎂✨</span>
+   <h1>كل سنة وانتي<br><span>طيبة يا نونة</span></h1>
+   <p>النهارده يوم مميز عشان ده يوم ميلاد إنسانة جميلة،<br>وأتمنى تكون بداية سنة مليانة لحظات سعيدة</p>
+   <div class="date-pill">🎈 25 نوفمبر · يوم ميلاد القمر</div>
+  </div>
+  <div class="scroll-note">انزلي شوفي المفاجآت ↓</div>
+ </header>
+
+ <section>
+  <div class="wrap">
+   <div class="section-head">
+    <small>THE NONA COLLECTION</small>
+    <h2> 📸</h2>
+    <p>صور روحقلبي</p>
+   </div>
+   <div class="gallery">
+    <figure class="polaroid" style="--tilt:-3deg">
+     <img src="nona1.jpg" alt="نونة وهي صغيرة">
+    </figure>
+    <figure class="polaroid" style="--tilt:2deg">
+     <img src="nona2.jpg" alt="صورة مرحة لنونة">
+    </figure>
+    <figure class="polaroid" style="--tilt:-2deg">
+     <img src="nona3.jpg" alt="صورة نونة بالأبيض والأسود">
+    </figure>
+   </div>
+  </div>
+ </section>
+
+ <section>
+  <div class="wrap">
+   <div class="section-head">
+    <small>A FEW WORDS FOR YOU</small>
+    <h2>حاجات جميلة فيكي</h2>
+    <p>في يومك الجميل ده أتمنى تفضلي دايمًا فاكرة قد ايه وجودك مميز:</p>
+   </div>
+   <div class="cards">
+    <article class="card"><div class="emoji">🌷</div><h3>روحك الجميلة</h3><p>بتدي للي حوالكي راحة و احساس جميل</p></article>
+    <article class="card"><div class="emoji">😊</div><h3>ابتسامتك</h3><p>احلى حاجة فيكي</p></article>
+    <article class="card"><div class="emoji">✨</div><h3>شخصيتك</h3><p>باردة بس غالية عليا</p></article>
+   </div>
+  </div>
+ </section>
+
+ <section>
+  <div class="wrap">
+   <div class="quote">
+    <div class="mark">“</div>
+    <p>كل سنة وانتي طيبة يا نونة،<br>بتمنى ليكي سنين مليانة فرح وراحة ونجاح 🩷</p>
+    <small>WITH WARMEST WISHES</small>
+   </div>
+  </div>
+ </section>
+
+ <section>
+  <div class="wrap">
+   <div class="section-head">
+    <small>ONE LITTLE MESSAGE</small>
+    <h2>ورسالة صغيرة ليكي 💌</h2>
+    <p>كلمات بسيطة في يوم مميز</p>
+   </div>
+   <div class="note">
+    <div class="icon">💌</div>
+    <h3>رسالة عيد ميلاد لنونة</h3>
+    <p>اضغطي لقراءة الرسالة</p>
+    <div class="note-text" id="noteText">
+     <div class="body">
+      يا نونة ❤️<br>
+      كل سنة وانتي طيبة يا قمر، ويا رب السنة الجديدة من عمرك تكون أحلى من كل اللي فات.
+      أتمنالك راحة بال، ونجاح، وضحك كتير، وحاجات حلوة تيجي من غير ترتيب.<br><br>
+      أتمنى تفضلي دايمًا بنفس روحك الجميلة، وتلاقي في أيامك كل اللي يسعد قلبك.
+      وربنا يحققلك كل اللي نفسك فيه، وتفضلي مبسوطة ومنورة حياة اللي حواليكي.
+      <strong>عيد ميلاد سعيد يا نونة 🎂🩷</strong>
+     </div>
+    </div>
+    <button class="secondary" id="noteButton" onclick="openNote()">افتحي الرسالة 🩷</button>
+   </div>
+  </div>
+ </section>
+
+ <div class="final">
+  <div class="heart">🎂🩷</div>
+  <h2>Happy Birthday, Nona!</h2>
+  <p>أتمنى يكون يومك مليان سعادة،<br>وإن سنتك الجديدة تحمل لكِ أجمل المفاجآت والأمنيات.</p>
+  <div class="sign">بكل الود، زياد ✨</div>
+ </div>
+ <footer>MADE WITH WARM WISHES · 25 NOVEMBER</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+<script>
+function celebrate(){
+ if(typeof confetti!=="function")return;
+ const end=Date.now()+1400;
+ const colors=["#f5a7c1","#d66b91","#f8d5e2","#d8b17e","#ffffff"];
+ (function frame(){
+  confetti({particleCount:4,angle:60,spread:60,origin:{x:0,y:.68},colors});
+  confetti({particleCount:4,angle:120,spread:60,origin:{x:1,y:.68},colors});
+  if(Date.now()<end)requestAnimationFrame(frame);
+ })();
+}
+function openGift(){
+ document.getElementById("intro").classList.add("hide");
+ document.getElementById("main").classList.add("visible");
+ const music=document.getElementById("birthdayMusic");
+ music.volume=.35;
+ music.play().catch(()=>{});
+ celebrate();
+ for(let i=0;i<15;i++)setTimeout(makeFloat,i*260);
+}
+function openNote(){
+ const note=document.getElementById("noteText");
+ note.classList.add("open");
+ document.getElementById("noteButton").textContent="كل سنة وانتي طيبة يا نونة 🩷";
+ celebrate();
+ setTimeout(()=>note.scrollIntoView({behavior:"smooth",block:"center"}),250);
+}
+function makeFloat(){
+ const el=document.createElement("span");
+ el.className="float";
+ el.textContent=["♡","✦","🩷","✨","💕"][Math.floor(Math.random()*5)];
+ el.style.left=Math.random()*100+"%";
+ el.style.fontSize=(14+Math.random()*17)+"px";
+ el.style.color=["#e58cac","#c86c91","#d8b17e"][Math.floor(Math.random()*3)];
+ el.style.animationDuration=(5+Math.random()*4)+"s";
+ document.body.appendChild(el);
+ setTimeout(()=>el.remove(),10000);
+}
+</script>
+</body>
+</html>
